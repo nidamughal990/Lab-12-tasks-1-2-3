@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Smooth transition effect for background and text color */
+        body {
+            transition: background-color 0.5s ease, color 0.5s ease;
+        }
+
+        /* Style the color picker container */
+        #color-picker-container {
+            margin: 20px;
+            padding: 10px;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        label {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    
+    <header>
+        <form id="contact-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            <br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            <br>
+            <button type="submit">Submit</button>
+        </form>
+        <nav>
+            <a href="#about">About</a> |
+            <a href="#skills">Skills</a> |
+            <a href="#projects">Projects</a>
+        </nav>
+    </header>
+
+    <!-- Background & Text color pickers -->
+    <div id="color-picker-container">
+        <label for="page-color-picker">Choose Background Color:</label>
+        <input type="color" id="page-color-picker">
+
+        <label for="text-color-picker">Choose Text Color:</label>
+        <input type="color" id="text-color-picker">
+    </div>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>I am a web developer passionate about creating websites.</p>
+    </section>
+    
+    <section id="skills">
+        <h2>Skills</h2>
+        <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+        </ul>
+    </section>
+    
+    <section id="projects">
+        <h2>Projects</h2>
+        <ul>
+            <li>Portfolio Website</li>
+            <li>Blog App</li>
+        </ul>
+    </section>
+    
+    <script>
+        // Change background color with smooth transition
+        document.getElementById("page-color-picker").addEventListener("input", function () {
+            document.body.style.backgroundColor = this.value;
+        });
+
+        // Change text color with smooth transition
+        document.getElementById("text-color-picker").addEventListener("input", function () {
+            document.body.style.color = this.value;
+        });
+    </script>
+
+</body>
+</html>
